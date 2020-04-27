@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head th:fragment="listHead">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ 
+ table {
+ 	border:1px solid #blue;
+ 	border-collapse: collapse;
+ 	width: 90%;
+ 	margin:10px auto;
+ }
+ 
+ td,th {
+ 	white-space: nowrap;
+ 	border:1px solid blue;
+ 	height: 50px;
+ }
+
+</style>
+
+</head>
+<body th:fragment="listBody">
+<h1>BOOK List</h1>
+<table>
+	<tr>
+		<th>도서명</th>
+		<th>회사</th>
+		<th>저자</th>
+		<th>발행년도</th>
+		<th>가격</th>
+		<th>비고</th>
+		
+	
+	</tr>
+	<tr th:each="book : ${bookList}" th:data-book-id="${book.id}">
+		<td th:text="${book.bookname}" class="b_tr" th:attr="data-book-id=${book.id}">도서명</td>
+		<td th:text="${book.comp}">회사</td>
+		<td th:text="${book.auth}">저자</td>
+		<td th:text="${book.year}">발행년도</td>
+		<td th:text="${book.price}">가격</td>
+	
+	</tr>
+	
+</table>
+<button id="btn_insert">도서 등록</button>
+
+</body>
+</html>

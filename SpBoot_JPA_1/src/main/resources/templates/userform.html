@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<th:block th:include="head"></th:block>
+
+</head>
+<body>
+<h2>Member 등록</h2>
+<form method="POST" th:object="${user}" class="was-validated">
+	<div>
+		<label for="username">MEMBER NAME</label>
+		<input th:field="*{username}" required="required">
+		<div class="valid-feedback">정상적으로 입력되었습니다.</div>
+		<div class="invalid-feedback">MEMBER name을 입력해 주세요</div>
+	</div>
+	<div>
+		<label for="email">E-mail</label>
+		<input th:field="*{email}"  required="required">
+		<div class="valid-feedback">정상적으로 입력되었습니다.</div>
+		<div class="invalid-feedback">Email을 입력해 주세요</div>
+	</div>
+	<div>
+		<label for="phone">PHONE</label>
+		<input th:field="*{phone}" required="required">
+		<div class="valid-feedback">정상적으로 입력되었습니다.</div>
+		<div class="invalid-feedback">Email을 입력해 주세요</div>
+	</div>
+	<div>
+		<label for="address">ADDRESS</label>
+		<input th:field="*{address}" required="required">
+		<div class="valid-feedback">정상적으로 입력되었습니다.</div>
+		<div class="invalid-feedback">Email을 입력해 주세요</div>
+	</div>
+	<button>저장</button>
+</form>
+
+</body>
+</html>
+
+

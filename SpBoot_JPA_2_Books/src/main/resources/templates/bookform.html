@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<th:block th:include="head"></th:block>
+
+</head>
+<body>
+<h1>Book Insert</h1>
+<form method="POST" th:object="${book}">
+	<div>
+		<label for=bookname>도서명</label>
+		<input th:field="*{bookname}" required="required">
+	</div>
+	
+	<div>
+		<label for=comp>회사</label>
+		<input th:field="*{comp}" required="required">
+	</div>
+	<div>
+		<label for=auth>저자</label>
+		<input th:field="*{auth}" required="required">
+	</div>
+	<div>
+		<label for=year>발행년도</label>
+		<input th:field="*{year}" required="required">
+	</div>
+	<div>
+		<label for=price>가격</label>
+		<input th:field="*{price}" required="required">
+	</div>
+	<button>등록</button>
+	
+
+</form>
+</body>
+</html>
