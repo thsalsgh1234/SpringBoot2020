@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import com.biz.sec.domain.BBsVO;
 import com.biz.sec.repository.BBsDao;
@@ -38,7 +39,7 @@ public class SpBootSecurityV1Application {
 					
 					BBsVO bbsVO = BBsVO.builder()
 							.bbsTitle(title)
-							.bbsAuth("callor")
+							.bbsAuth("hhjkjm123")
 							.bbsDate(date)
 							.build();
 					bDao.save(bbsVO);

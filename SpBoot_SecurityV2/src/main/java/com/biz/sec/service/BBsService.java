@@ -18,6 +18,10 @@ public class BBsService {
 	
 	private final BBsDao bDao;
 	
+	public void save(BBsVO bbsVO) {
+		bDao.save(bbsVO);
+	}
+	
 	public Page<BBsVO> getPageBBsList(Pageable pageable) {
 		
 		// 몇페이지를 요청했는가?

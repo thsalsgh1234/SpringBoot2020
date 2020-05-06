@@ -11,6 +11,7 @@ import com.biz.sec.domain.BBsVO;
 import com.biz.sec.service.BBsService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /*
  * REST controller
@@ -18,6 +19,7 @@ import lombok.RequiredArgsConstructor;
  * view 없는 형태로 
  * json 데이터를 보내주는 컨트롤러 역할
  */
+@Slf4j
 @RequiredArgsConstructor
 @RequestMapping(value="/bbs/api")
 @RestController
@@ -30,6 +32,14 @@ public class BBsRestController {
 	public List<BBsVO> getBBsList() {
 		List<BBsVO> bbsList = bService.getBBsList();
 		return bbsList;
+	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	@CrossOrigin(origins = "http://localhost:3000")
+	public String insert(BBsVO bbsVO) {
+		log.debug(bbsVO.toString());
+		bService.save(bbsVO);
+		return "OK";
 	}
 
 }
