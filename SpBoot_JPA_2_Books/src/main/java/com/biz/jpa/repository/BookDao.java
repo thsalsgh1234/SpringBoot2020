@@ -6,5 +6,4 @@ import com.biz.jpa.domain.BookVO;
 
 public interface BookDao extends JpaRepository<BookVO, Long>{
 
-	
 }
